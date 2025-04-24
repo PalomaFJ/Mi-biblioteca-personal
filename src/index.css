@@ -1,0 +1,114 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f3e5f5;
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 20px,
+      rgba(200, 100, 200, 0.05) 20px,
+      rgba(200, 100, 200, 0.05) 40px),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><text x="0" y="35" font-size="30" fill="rgba(100,0,100,0.05)">♀</text></svg>');
+  background-repeat: repeat;
+
+  min-height: 100vh;
+  padding: 2rem;
+  color: #333;
+}
+
+
+/* Título y presentación */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Input de búsqueda */
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.search input {
+  padding: 0.5rem 1rem;
+  width: 300px;
+  border: 2px solid #999;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+/* Cuadrícula de libros */
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* ← forzamos 3 columnas */
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+  /* ← centramos la cuadrícula */
+}
+
+/* Tarjeta de libro */
+.book-card {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  position: relative;
+}
+
+.book-card .portada {
+  background-color: #ddd;
+  width: 100%;
+  aspect-ratio: 2/3;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.book-card span {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .book-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .book-list {
+    grid-template-columns: 1fr;
+  }
+}
